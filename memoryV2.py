@@ -24,10 +24,10 @@ class memory():
 		#this will be the NLTK review?
 		data = []
 		# data.add(classifier.classify(format_sentence(data)))
-		sentiment = paralleldots.sentiment(str(content))
+		sentiment = paralleldots.sentiment(str(content))  #This will gather the sentiment of the item. So if it is negative or not.
 		data.append(sentiment)
 
-		emotion = paralleldots.emotion(str(content))
+		emotion = paralleldots.emotion(str(content)) #This will gather the emotional significance of an item so grabbing if it has some kinds of emtions and scaling them.
 		data.append(emotion)
 		print emotion
 
@@ -60,6 +60,9 @@ class memory():
 	def getTime(self):
 		return self.time
 
+
+		#This willl gather the name from the text if it is included. This should ideally be used to pull
+		# a name in the case that it has not been pre defined.
 	def getNames(text):
 	    tokens = nltk.tokenize.word_tokenize(text)
 	    pos = nltk.pos_tag(tokens)
